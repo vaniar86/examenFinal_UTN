@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <!-- Google Fonts -->
+    <link href="http://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Playfair+Display:ital,wght@0,500;1,400;1,600&display=swap" rel="stylesheet">
+    <!--scrip FontAwesome  -->
+    <script src="http://kit.fontawesome.com/5274bdad60.js" crossorigin="anonymous"></script>
+    <title><%= title %></title>
+   
+</head>
+<body class="ingreso">
+    <div class="main">
+    <div class="container_ingreso">
+        <div class="form-content">
+            <div class="form-image">
+                <img class="form-img" src="../../images/fondo-form.jpg" alt="Image formulario">
+            </div>
+            <div class="content-form animate__animated animate__bounceInRight">
+                <form action="/ingresar" method="POST" id="ingresar" autocomplete="off">
+                    <h2>Ingrese sus Datos</h2>
+                       <div class="alert alert-danger" style="display: none;" id="yavoto">
+                           Su voto ya fue registrado
+                        </div>
+                        <div class="alert alert-danger" style="display: none;" id="errmsg">
+                           Tenemos un error en la solicitud, intente nuevamente.
+                         </div>
+                         <div class="alert alert-danger" style="display: none;" id="exito">
+                            gracias
+                          </div>
+                    
+                    <div class="form-group form-input">
+                        <input type="text" name="nombre" id="name" value="" required/>
+                        <label for="name" class="form-label"><i class="fas fa-user mr-2"></i>
+                            Nombre</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="text" name="apellido" id="lastName" value="" required/>
+                        <label for="name" class="form-label"><i class="fas fa-user-circle mr-2"></i>
+                         Apellido</label>
+                    </div>
+                    <div class="form-group form-input">                        
+                       <input type="text" minlength="6" maxlength="9" name="dni" id="dni" value="" required>
+                        <label for="dni" class="form-label"><i class="fas fa-address-card  mr-2"></i>
+                            Dni</label> 
+                               
+                    </div>
+                    <div class="form-group">
+                        <div class="select-list">
+                                <select class="azul" name="sexo" id="genre" required>
+                                    <option id="init">Sexo</option>
+                                    <option  value="hombre">Hombre</option>
+                                    <option  value="mujer">Mujer</option>
+                                    <option  value="otro">Otro</option>
+                                </select>
+                                <span class="form-label"><i class="fas fa-venus-mars"></i></span>
+                        </div>
+                    </div>                   
+                     <input type="button" value="Votar" class="submit" id="submit"  onclick="checkVotante();"/>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+    function checkVotante(){
+        dni = $("#dni").val();
+        $.ajax({
+            method: "GET",
+            url: "/api/" + dni,
+        })
+        .done(function(data){
+            if (data===false){
+                $('#yavoto').show();
+                $('#submit').attr("disabled", true);
+            }else{
+                console.log('no voto jq');
+                $.post("/ingresar",$("#ingresar").serialize(),function(res){
+                if(res == true){
+                    console.log('entro por if');
+                    window.location.replace("/elegirCandidato/" + dni);                   
+                } else {
+                    console.log('entro por else');
+                    $('#errmsg').show()
+                }
+
+            });
+          }      
+        });
+    }   
+                    
+
+</script>
+
+</body>
+</html>

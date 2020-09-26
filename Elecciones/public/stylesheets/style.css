@@ -1,0 +1,271 @@
+/* Estilos pagina de Inicio */
+.fondo{
+  min-height: 100vh;
+  color: #fff;
+  background: url('../images/fondo_2.jpg') center/cover; ;
+  font-family: 'Playfair Display', serif;
+  
+}
+
+.titulo_index {
+  line-height: 3;
+  margin-top: 20px;
+  padding: 0;
+  font-weight: 300;
+  color: rgb(253, 253, 253);
+  font-family: 'Nunito', sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 60px; 
+}
+
+.contenedor{   
+  width: 400px;
+  height: 500px;
+  margin-top: 120px;
+  border-radius: 50px 5px;
+  background-color: rgba(21, 26, 49, 0.522);
+ 
+}
+
+
+.boton_index{
+  background-color:#000;
+  color: azure;
+  width: 150px;
+  margin-top: 70px;
+  padding: 18px;
+  text-transform: uppercase;
+  border-radius: 10px;   
+}
+.boton_index:hover{
+  background: #212e66;
+  color: aliceblue;
+  width: 180px;
+}
+
+/* *************************************************************************** */
+/* estilos para formulario de ingreso */
+
+input, select, textarea {
+  outline: none;
+  appearance: unset;
+}   
+input:focus, select:focus {
+  outline: none;
+  box-shadow: none;
+} 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto; 
+}   
+h2 {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 28px; 
+}
+.ingreso {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  background:#325569 ;
+  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  margin: 0px; 
+}
+.main {
+  padding: 115px 0;
+  position: relative; 
+}
+.container_ingreso {
+  width: 1050px;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);   
+  border-radius: 10px;
+}
+
+.form-content {
+  display: flex;
+  flex-wrap: wrap;  
+}   
+
+.form-image {
+  width: 58.33%;
+  margin-bottom: -8px;
+}
+.form-img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}   
+
+.content-form {
+  width: 41.67%;
+  background: #111;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+form {
+  padding: 72px 70px 70px 70px; 
+}
+.form-group {
+  margin-bottom: 10px;
+  position: relative; 
+}
+.form-input {
+  padding-top: 21px; 
+}
+input {
+  transition: 0.3s ease;
+  padding-top: 10px;
+  
+}
+input:focus + .form-label, input:valid + .form-label {
+    top: -2px;
+    font-size: 12px;
+    color: #d4d3db; 
+}
+
+input, select {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  color: #fff;
+  background: transparent;
+  border-bottom: 1px solid rgb(163, 161, 161);
+  padding: 2px 0; 
+}
+input:focus, select:focus {
+    border-bottom: 1px solid #d4d3db;
+}
+input:focus, select:focus{
+  outline: none;
+}
+.form-label {
+  position: absolute;
+  transition: 0.25s ease;
+  color: #f0ecec;
+  left: -20px;
+  top: 19px; 
+}
+.select-list {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 47px; 
+}
+.azul{
+  background: 0 0;
+  z-index: 9;
+  border-bottom: 1px solid #999;
+  padding-top: 15px; 
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+}
+option{
+  padding: 5px 0px;
+  z-index: 2;
+  color: rgb(0, 0, 0) ;
+  background:  rgb(253, 253, 253);
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+} 
+#init{
+ display: none;
+ background: rgb(253, 253, 253);
+ color: #222;
+ padding: 5px 10px; 
+} 
+option:hover{
+  background: #bbc3f3;
+}
+
+.select-list::after {
+  position: absolute;
+  right: 10px;
+  transform: translateY(30%);
+  font-size: 20px;
+  color: #bebebe;
+  font-family:"Font Awesome 5 Free";
+  font-weight: 900;
+  content:"\f107";
+
+}
+      
+.azul {
+  position: absolute;
+  width: 100%; 
+} 
+
+
+.submit {
+  width: auto;
+  margin-top: 50px;
+  background: #325569;
+  color: #fff;
+  padding: 15px 35px;
+  font-weight: 300;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; }
+  .submit:hover {
+    background: #597bc0c2; }
+/* estilos para eleccions de candidatos */
+
+hr{
+  background-color:aliceblue;
+}
+.image{
+  height: 100%;
+}
+.btn_candidatos{
+  padding: 15px 35px;
+  
+}
+
+
+@media screen and (max-width: 1200px) {
+  .container_ingreso {
+    width: calc( 100% - 30px);
+    max-width: 100%;
+    background: transparent; }
+
+  .booking-content{
+      flex-direction: column;
+  }
+
+  .form-image, .content-form {
+      width: 100%; }
+  
+  .form-image {
+  order: 2;
+  text-align: center; }
+ 
+  .form-img {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      width: 100%; }
+
+   .content-form {
+      order: 1;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px; }
+}
+@media screen and (max-width: 480px) {
+  form {
+      padding: 72px 40px 70px 40px; } }

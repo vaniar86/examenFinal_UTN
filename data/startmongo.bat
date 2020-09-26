@@ -1,0 +1,1 @@
+"C:/program files/mongodb/server/4.2/bin/mongod.exe" --dbpath .
